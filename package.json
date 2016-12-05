@@ -1,10 +1,10 @@
 {
   "name"        :  "@superhero/debug",
-  "version"     :  "0.1.0",
+  "version"     :  "0.1.6",
   "description" :  "Debug utility",
   "repository"  :  "git@github.com:superhero/js.debug.git",
   "main"        :  "lib/debug.js",
-  "license"     :  "WTFPL",
+  "license"     :  "MIT",
   "keywords"    : ["debug","log","console"],
   "author"      :
   {
