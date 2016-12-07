@@ -36,20 +36,26 @@ All options are optional.
 
 ```javascript
 {
+  // define a desired color of the output:
+  // [black, blue, cyan, green, magenta, red, yellow, white]
+  color: undefined,
+
+  // if false, output wont be colored.
+  colors: true,
+
+  // show timestamp in prefix.
+  date: true,
+
   // if false, no output is made.
   debug: true,
 
   // depth of object inspection.
   depth: 10,
 
-  // define a desired color of the output
-  // [black, blue, cyan, green, magenta, red, yellow, white]
-  color: undefined,
+  // a prefixed keyword to define the output.
+  prefix: 'debug',
 
-  // if false, output wont be colored
-  colors: true,
-
-  // a prefixed keyword to define the output
-  prefix: 'debug:'
+  // what separator to be used between prefixes and content.
+  separator: ':\t'
 }
 ```
