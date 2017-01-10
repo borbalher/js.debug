@@ -1,6 +1,6 @@
 {
   "name"        :  "@superhero/debug",
-  "version"     :  "0.2.8",
+  "version"     :  "0.2.9",
   "description" :  "Debug utility",
   "repository"  :  "git@github.com:superhero/js.debug.git",
   "main"        :  "lib/debug.js",
