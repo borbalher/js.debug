@@ -52,6 +52,9 @@ All options are optional.
   // depth of object inspection.
   depth: 10,
 
+  // if an auto increment index should be printed.
+  index: true,
+
   // a prefixed keyword to define the output.
   prefix: 'debug',
 
