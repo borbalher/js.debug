@@ -55,8 +55,8 @@ All options are optional.
   // if an auto increment index should be printed.
   index: true,
 
-  // a prefixed keyword to define the output.
-  prefix: 'debug',
+  // a string that will prefix the output. 
+  prefix: false,
 
   // what separator to be used between prefixes and content.
   separator: ':\t'
