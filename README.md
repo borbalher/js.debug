@@ -36,6 +36,9 @@ All options are optional.
 
 ```javascript
 {
+  // cap array output
+  maxArrayLength: 3,
+
   // define a desired color of the output:
   // [black, blue, cyan, green, magenta, red, yellow, white]
   color: undefined,
@@ -55,7 +58,7 @@ All options are optional.
   // if an auto increment index should be printed.
   index: true,
 
-  // a string that will prefix the output. 
+  // a string that will prefix the output.
   prefix: false,
 
   // what separator to be used between prefixes and content.
