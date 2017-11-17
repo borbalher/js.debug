@@ -1,6 +1,6 @@
 {
   "name"        :  "@superhero/debug",
-  "version"     :  "0.3.6",
+  "version"     :  "1.0.2",
   "description" :  "Debug utility",
   "repository"  :  "git@github.com:superhero/js.debug.git",
   "main"        :  "lib/debug.js",
@@ -11,5 +11,9 @@
     "name"  : "Erik Landvall",
     "email" : "erik@landvall.se",
     "url"   : "http://erik.landvall.se"
+  },
+  "dependencies":
+  {
+    "dateformat"  : "3.0.2"
   }
 }
