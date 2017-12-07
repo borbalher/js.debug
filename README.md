@@ -83,6 +83,12 @@ All options are optional.
   prefix: false,
 
   // the separator to use between content.
-  separator: '\t'
+  separator: '\t',
+
+  // error output, writable stream
+  stderr: process.stderr,
+
+  // log output, writable stream
+  stdout: process.stdout
 }
 ```
