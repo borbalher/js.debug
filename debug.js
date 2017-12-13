@@ -9,8 +9,8 @@ output     = function(args, cb)
 {
   this.sn = this.sn < Number.MAX_SAFE_INTEGER ? this.sn + 1 : 0;
   this.config.debug && cb(
-    [ this.config.prefix,
-      this.config.date   && dateformat(new Date(), this.config.dateFormat),
+    [ this.config.date   && dateformat(new Date(), this.config.dateFormat),
+      this.config.prefix,
       this.config.index  && this.sn
     ].filter(_=>_).concat(args).map((arg) =>
       typeof arg == 'object'
