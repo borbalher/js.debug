@@ -17,7 +17,7 @@ output     = function(args, cb)
       ? util.inspect(arg, this.getInspectOptions())
       : this.colorize(this.escape(arg))).join(this.config.separator));
 },
-Debug      = module.exports = class
+Debug = module.exports = class
 {
   constructor(options)
   {
