@@ -55,7 +55,7 @@ Debug      = module.exports = class
       case 'white'  : this.color = '37'; break;
     }
 
-    this.console = new Console(this.config.stdout, this.config.stderr);
+    this.console = new console.Console(this.config.stdout, this.config.stderr);
   }
 
   colorize(s)
