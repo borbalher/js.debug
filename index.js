@@ -100,6 +100,11 @@ Debug = module.exports = class
     output.call(this, args, this.console.log.bind(this.console));
   }
 
+  info(...args)
+  {
+    output.call(this, args, this.console.info.bind(this.console));
+  }
+
   error(...args)
   {
     output.call(this, args, this.console.error.bind(this.console));
@@ -109,9 +114,16 @@ Debug = module.exports = class
   {
     output.call(this, args, this.console.trace.bind(this.console));
   }
+
+  table(...args)
+  {
+    output.call(this, args, this.console.table.bind(this.console));
+  }
 }
 
 const static_debug    = new Debug();
 module.exports.log    = static_debug.log  .bind(static_debug);
+module.exports.info   = static_debug.info .bind(static_debug);
 module.exports.error  = static_debug.error.bind(static_debug);
 module.exports.trace  = static_debug.trace.bind(static_debug);
+module.exports.table  = static_debug.table.bind(static_debug);
