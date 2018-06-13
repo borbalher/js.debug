@@ -102,7 +102,7 @@ Debug = module.exports = class
 
   info(...args)
   {
-    output.call(this, args, this.console.info.bind(this.console));
+    output.call(this, args, this.console.log.bind(this.console));
   }
 
   error(...args)
