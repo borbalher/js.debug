@@ -70,7 +70,7 @@ Debug = module.exports = class
     if(Object.prototype.toString.call(s) === '[object String]')
     {
       s = s.replace(/[\x00-\x09\x10-\x1F]/g, '').trim();
-      if(s.length > this.config.maxStringLength)
+      if(this.config.maxStringLength && s.length > this.config.maxStringLength)
       {
         const segment = Math.floor(this.config.maxStringLength / 2);
         s =
