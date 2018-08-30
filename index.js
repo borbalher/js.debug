@@ -31,7 +31,7 @@ Debug = module.exports = class
       maxArrayLength  : 10,
       maxObjectDepth  : 10,
       maxStringLength : 100,
-      color           : cid,
+      color           : colors[cid],
       colors          : true,
       date            : true,
       dateFormat      : 'yyyy-mm-dd HH:MM:ss',
@@ -47,11 +47,9 @@ Debug = module.exports = class
     this.console = new console.Console(this.config.stdout, this.config.stderr)
   }
 
-  color(i = 0)
+  color(color)
   {
-    this.config.color = +i % colors.length
-
-    switch (colors[this.config.color])
+    switch (color)
     {
       case 'black'  : this._color = '30'; break
       case 'blue'   : this._color = '34'; break
