@@ -25,7 +25,7 @@ Debug = module.exports = class
     cid = ++cid < colors.length ? cid : 0
 
     // log messages counter, serial number
-    this.sn     = 0;
+    this.sn     = 0
     this.config = Object.assign(
     {
       maxArrayLength  : 10,
@@ -45,14 +45,14 @@ Debug = module.exports = class
 
     switch (this.config.color)
     {
-      case 'black'  : this.color = '30'; break
-      case 'blue'   : this.color = '34'; break
-      case 'cyan'   : this.color = '36'; break
-      case 'green'  : this.color = '32'; break
-      case 'magenta': this.color = '35'; break
-      case 'red'    : this.color = '31'; break
-      case 'yellow' : this.color = '33'; break
-      case 'white'  : this.color = '37'; break
+      case 'black'  : this._color = '30'; break
+      case 'blue'   : this._color = '34'; break
+      case 'cyan'   : this._color = '36'; break
+      case 'green'  : this._color = '32'; break
+      case 'magenta': this._color = '35'; break
+      case 'red'    : this._color = '31'; break
+      case 'yellow' : this._color = '33'; break
+      case 'white'  : this._color = '37'; break
     }
 
     this.console = new console.Console(this.config.stdout, this.config.stderr)
@@ -66,8 +66,8 @@ Debug = module.exports = class
 
   colorize(s)
   {
-    return this.color
-    ? '\x1b[' + this.color + 'm' + s + '\x1b[0m'
+    return this._color
+    ? '\x1b[' + this._color + 'm' + s + '\x1b[0m'
     : s
   }
 
@@ -128,6 +128,7 @@ Debug = module.exports = class
 }
 
 const static_debug    = new Debug()
+module.exports.color  = static_debug.color.bind(static_debug)
 module.exports.log    = static_debug.log  .bind(static_debug)
 module.exports.info   = static_debug.info .bind(static_debug)
 module.exports.error  = static_debug.error.bind(static_debug)
