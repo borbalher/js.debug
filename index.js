@@ -60,7 +60,7 @@ Debug = module.exports = class
 
   color(i)
   {
-    this.config.color = colors[i % colors.length]
+    this.config.color = colors[+i % colors.length]
     return this
   }
 
