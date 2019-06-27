@@ -61,7 +61,7 @@ All options are optional.
   maxStringLength: 100,
 
   // define a desired color of the output:
-  // [black, blue, cyan, green, magenta, red, yellow, white]
+  // ['black', 'blue', 'cyan', 'green', 'magenta', 'red', 'yellow', 'white', false]
   color: undefined,
 
   // if false, output wont be colored.

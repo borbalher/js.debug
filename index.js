@@ -1,6 +1,3 @@
-// color id
-let cid = -1
-
 const
 util       = require('util'),
 dateformat = require('dateformat'),
@@ -21,17 +18,14 @@ Debug = module.exports = class
 {
   constructor(options)
   {
-    // cycles the colors to prevent duplicates
-    cid = ++cid < colors.length ? cid : 0
-
     // log messages counter, serial number
     this.sn     = 0
     this.config = Object.assign(
     {
       maxArrayLength  : 10,
       maxObjectDepth  : 10,
-      maxStringLength : 100,
-      color           : colors[cid],
+      maxStringLength : 300,
+      color           : false,
       colors          : true,
       date            : true,
       dateFormat      : 'yyyy-mm-dd HH:MM:ss',
@@ -51,14 +45,16 @@ Debug = module.exports = class
   {
     switch (color)
     {
-      case 'black'  : this._color = '30'; break
-      case 'blue'   : this._color = '34'; break
-      case 'cyan'   : this._color = '36'; break
-      case 'green'  : this._color = '32'; break
-      case 'magenta': this._color = '35'; break
-      case 'red'    : this._color = '31'; break
-      case 'yellow' : this._color = '33'; break
-      case 'white'  : this._color = '37'; break
+      case 'black'    : this._color = '30'; break
+      case 'blue'     : this._color = '34'; break
+      case 'cyan'     : this._color = '36'; break
+      case 'green'    : this._color = '32'; break
+      case 'magenta'  : this._color = '35'; break
+      case 'red'      : this._color = '31'; break
+      case 'yellow'   : this._color = '33'; break
+      case 'white'    : this._color = '37'; break
+      case false      :
+      case undefined  : delete this._color
     }
 
     return this
@@ -75,7 +71,7 @@ Debug = module.exports = class
   {
     if(Object.prototype.toString.call(s) === '[object String]')
     {
-      s = s.replace(/[\x00-\x09\x10-\x1F]/g, '').trim()
+      s = s.replace(/[\x00-\x09\x10-\x1F]/g, '')
       if(this.config.maxStringLength && s.length > this.config.maxStringLength)
       {
         const segment = Math.floor(this.config.maxStringLength / 2)
