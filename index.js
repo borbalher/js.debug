@@ -1,7 +1,6 @@
 const
 util       = require('util'),
 dateformat = require('dateformat'),
-colors     = ['blue','cyan','green','magenta','red','yellow'],
 output     = function(args, cb)
 {
   this.sn = this.sn < Number.MAX_SAFE_INTEGER ? this.sn + 1 : 0
@@ -32,13 +31,14 @@ Debug = module.exports = class
       debug           : true,
       index           : false,
       prefix          : false,
-      separator       : '\t',
-      stderr          : process.stderr,
-      stdout          : process.stdout
+      separator       : '\t'
     }, options)
 
     this.color(this.config.color)
-    this.console = new console.Console(this.config.stdout, this.config.stderr)
+
+    this.console = this.config.stdout && this.config.stderr
+    ? new console.Console(this.config.stdout, this.config.stderr)
+    : console
   }
 
   color(color)
